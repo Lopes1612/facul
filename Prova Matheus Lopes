@@ -14,11 +14,11 @@ namespace Program1
         static void Main(string[] args)
         {
         inicio:
-        
-            //Matheus Lopes Cosentino
+
+            //Matheus Lopes Cosentino e Bernardo Bonin Galon
 
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("QUIZ - MATHEUS LOPES");
+            Console.WriteLine("QUIZ - MATHEUS E BERNARDO");
             Console.ResetColor();
             Console.WriteLine("\r\nPara iniciar, pressione Enter. . .");
 
@@ -179,18 +179,18 @@ namespace Program1
             Console.WriteLine("\r\nPressione ENTER para reiniciar!. . .");
             Console.WriteLine("Pressione QUALQUER TECLA para sair. . .");
 
-                var escolha = Console.ReadKey();
-           
-                if (escolha.Key == ConsoleKey.Escape)
-                {
-                    Environment.Exit(0);
-                }
-                if (escolha.Key == ConsoleKey.Enter)
-                {
-                    Console.Clear();
-                    goto inicio;
-                }
-           
+            var escolha = Console.ReadKey();
+
+            if (escolha.Key == ConsoleKey.Escape)
+            {
+                Environment.Exit(0);
+            }
+            if (escolha.Key == ConsoleKey.Enter)
+            {
+                Console.Clear();
+                goto inicio;
+            }
+
         }
     }
 }
