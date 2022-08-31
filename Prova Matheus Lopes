@@ -1,0 +1,196 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace Program1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        inicio:
+        
+            //Matheus Lopes Cosentino
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("QUIZ - MATHEUS LOPES");
+            Console.ResetColor();
+            Console.WriteLine("\r\nPara iniciar, pressione Enter. . .");
+
+            while (Console.ReadKey().Key != ConsoleKey.Enter)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Comando Inválido");
+            }
+
+            Console.Clear();
+            Console.WriteLine("PERGUNTA 1\r\n");
+            Console.WriteLine("Qual o nome do Deus dos Deuses na Mitologia Grega?");
+            Console.WriteLine("\r\n<1> Hades");
+            Console.WriteLine("<2> Zeus");
+            Console.WriteLine("<3> Kratos");
+            Console.WriteLine("<4> Odin");
+
+            int resposta = Convert.ToInt32(Console.ReadLine());
+
+            int right = 0;
+            int wrong = 0;
+            if (resposta == 2)
+            {
+                right++;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Diretamente dos altos do Olimpo! Resposta certa!");
+                Console.ResetColor();
+            }
+            else
+            {
+                wrong++;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Resposta errada, tente novamente!");
+                Console.ResetColor();
+
+
+            }
+            Console.WriteLine("\r\nPERGUNTA 2\r\n");
+            Console.WriteLine("Qual deus nórdico trocou seu olho, por conhecimento?");
+            Console.WriteLine("\r\n<1> Hera");
+            Console.WriteLine("<2> Thor");
+            Console.WriteLine("<3> Atreus");
+            Console.WriteLine("<4> Odin");
+
+            resposta = Convert.ToInt32(Console.ReadLine());
+
+            if (resposta == 4)
+            {
+                right++;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Ai meu olho! Mas você acertou, parabéns!");
+                Console.ResetColor();
+            }
+            else
+            {
+                wrong++;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Como assim você errou essa? Eu vou arrancar meu olho! Tenta de novo!");
+                Console.ResetColor();
+
+            }
+            Console.WriteLine("\r\nPERGUNTA 3\r\n");
+            Console.WriteLine("Qual deus, comanda o inferno na mitologia grega");
+            Console.WriteLine("\r\n<1> Hades");
+            Console.WriteLine("<2> Freya");
+            Console.WriteLine("<3> Kratos");
+            Console.WriteLine("<4> Baldur");
+            resposta = Convert.ToInt32(Console.ReadLine());
+
+            if (resposta == 1)
+            {
+                right++;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Está queimando, mas está certo! Parabéns");
+                Console.ResetColor();
+            }
+            else
+            {
+                wrong++;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Como assim você errou? Direto pro inferno!");
+                Console.ResetColor();
+            }
+
+            Console.WriteLine("\r\nPERGUNTA 4\r\n");
+            Console.WriteLine("Quem é o Guia dos Mortos na Mitologia Egípcia?");
+            Console.WriteLine("\r\n<1> Ares");
+            Console.WriteLine("<2> Hefesto");
+            Console.WriteLine("<3> Anubis");
+            Console.WriteLine("<4> Týr");
+            resposta = Convert.ToInt32(Console.ReadLine());
+
+            if (resposta == 3)
+            {
+                right++;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Parabéns! Você acertou!");
+                Console.ResetColor();
+            }
+            else
+            {
+                wrong++;
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Quase, só errou a mitologia!");
+                Console.ResetColor();
+            }
+            Console.WriteLine("\r\nPERGUNTA 5\r\n");
+            Console.WriteLine("Qual o nome do filho de Loki que é um lobo?");
+            Console.WriteLine("\r\n<1> Magni");
+            Console.WriteLine("<2> Fenrir");
+            Console.WriteLine("<3> Modi");
+            Console.WriteLine("<4> Freyr");
+            resposta = Convert.ToInt32(Console.ReadLine());
+
+            if (resposta == 2)
+            {
+                right++;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\r\nAcertou! Cuidado com o braço.");
+                Console.ResetColor();
+                Console.WriteLine("\r\nPressione Enter para ver os seus resultados!");
+                Console.ReadLine();
+            }
+            else
+            {
+                wrong++;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\r\nNem lobos eles são. ERROU!");
+                Console.ResetColor();
+                Console.WriteLine("\r\nPressione Enter para ver os seus resultados!");
+                Console.ReadLine();
+            }
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\r\nVocê Acertou " + right);
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\r\nVocê Errou: " + wrong);
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            if (right > wrong) Console.WriteLine("\r\nParabéns! Você Acertou a Maioria!");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            if (right < wrong) Console.WriteLine("\r\nQue pena, você errou demais. . . Tente Novamente!");
+            Console.ResetColor();
+
+            Console.WriteLine("\r\nPressione ENTER para reiniciar!. . .");
+            Console.WriteLine("Pressione QUALQUER TECLA para sair. . .");
+
+                var escolha = Console.ReadKey();
+           
+                if (escolha.Key == ConsoleKey.Escape)
+                {
+                    Environment.Exit(0);
+                }
+                if (escolha.Key == ConsoleKey.Enter)
+                {
+                    Console.Clear();
+                    goto inicio;
+                }
+           
+        }
+    }
+}
