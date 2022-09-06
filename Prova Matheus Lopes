@@ -53,7 +53,7 @@ namespace Program1
                 wrong++;
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Resposta errada, tente novamente!");
+                Console.WriteLine("Resposta errada... Vá jogar God of War... Lhe falta cultura!");
                 Console.ResetColor();
 
 
@@ -80,7 +80,7 @@ namespace Program1
                 wrong++;
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Como assim você errou essa? Eu vou arrancar meu olho! Tenta de novo!");
+                Console.WriteLine("Como assim você errou essa? Eu vou arrancar meu olho!");
                 Console.ResetColor();
 
             }
